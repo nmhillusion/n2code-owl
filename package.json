@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@nmhillusion/n2mix": "^2023.129.4",
-    "@nmhillusion/n2ngin-bull-engine": "^2024.3.2",
+    "@nmhillusion/n2ngin-bull-engine": "^2024.3.3",
     "path": "^0.12.7"
   }
 }

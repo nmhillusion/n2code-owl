@@ -1,7 +1,7 @@
 ---
 layoutPath: "../../layout/post-layout.pug"
 title: "Exercise 1: OOP với các phép tính cơ bản"
-iconLink: "https://www.techtarget.com/rms/onlineimages/operand_vs_operator-h_half_column_mobile.png"
+bannerLink: "https://www.techtarget.com/rms/onlineimages/operand_vs_operator-h_half_column_mobile.png"
 ---
 
 ## Đề bài
