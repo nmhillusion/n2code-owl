@@ -1,0 +1,19 @@
+{
+  "name": "n2code-owl",
+  "version": "1.0.0",
+  "description": "Learn more about code and programming",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build.mjs --watch",
+    "build": "node build.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nmhillusion/n2mix": "^2023.129.4",
+    "@nmhillusion/n2ngin-bull-engine": "^2024.3.0",
+    "path": "^0.12.7"
+  }
+}
