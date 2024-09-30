@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node build.mjs --watch",
-    "build": "node build.mjs",
+    "build": "node build.mjs --env-path=env.prod.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node server.mjs"
   },

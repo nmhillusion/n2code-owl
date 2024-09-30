@@ -1,7 +1,7 @@
 ---
 layoutPath: "../../layout/post-layout.pug"
 title: "Exercise 1: OOP với các phép tính cơ bản"
-bannerLink: "./math-operators.jpg"
+bannerLink: "https://nmhillusion.github.io/n2code-owl/oop/exercise-1/math-operators.jpg"
 ---
 
 ## Đề bài

@@ -8,6 +8,8 @@ const params = parser.cliParamsParser(process.argv);
 
 const watchMode = params.get("watch") ? true : false;
 
+const envPath = params.get("env-path") ? params.get("env-path") : "env.json";
+
 console.log({
   params,
 });
@@ -41,4 +43,5 @@ new BullEngine()
       },
     },
   })
+  .setVariableFilePathToInject(path.join(dirname, envPath))
   .render();
