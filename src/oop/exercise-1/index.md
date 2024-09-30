@@ -1,7 +1,7 @@
 ---
 layoutPath: "../../layout/post-layout.pug"
 title: "Exercise 1: OOP với các phép tính cơ bản"
-bannerLink: "https://www.techtarget.com/rms/onlineimages/operand_vs_operator-h_half_column_mobile.png"
+bannerLink: "./math-operators.jpg"
 ---
 
 ## Đề bài
@@ -36,7 +36,7 @@ public class UngDung {
 ## Cách xử lý
 
 1. Tạo class cơ sở tên `PhepTinh`
-2. Tạo class `PhepCong`, `PhepTru`, `PhepNhan`, `PhepChia` kế thừa lớp `PhepTinh` với phương thức `tinh(int x, int y)`
+2. Tạo class `PhepCong`, `PhepTru`, `PhepNhan`, `PhepChia` kế thừa lớp `PhepTinh` với phương thức `tinh(int x, int y)` được cài đặt tương ứng với các phép tính cộng / trừ / nhân / chia.
 3. Chạy thử kiểm tra và điều chỉnh phù hợp
 
 ## Chi tiết
@@ -97,6 +97,58 @@ class HelloWorld {
 }
 
 ```
+
+```bash
+$ javac UngDung.java
+$ java UngDung
+9 + 3 = 12
+9 - 3 = 6
+9 x 3 = 27
+9 : 3 = 3
+
+=== Code Execution Successful ===
+```
+
+## Mở rộng
+
+Thực ra mình cũng có thể tạo `PhepTinh` dưới dạng 1 interface, rồi cho các lớp khác để implement cho interface `PhepTinh` này.
+
+```java
+
+interface PhepTinh {
+    Object tinh(int x, int y);
+}
+
+class PhepCong implements PhepTinh {
+    @Override
+    public Object tinh(int x, int y) {
+        return x + y;
+    }
+}
+
+class PhepTru implements PhepTinh {
+    @Override
+    public Object tinh(int x, int y) {
+        return x - y;
+    }
+}
+
+class PhepNhan implements PhepTinh {
+    @Override
+    public Object tinh(int x, int y) {
+        return x * y;
+    }
+}
+
+class PhepChia implements PhepTinh {
+    @Override
+    public Object tinh(int x, int y) {
+        return x / y;
+    }
+}
+```
+
+Ta cũng sẽ có kết quả tương tự:
 
 ```bash
 $ javac UngDung.java

@@ -6,9 +6,8 @@ html(lang="en")
     title {{ title }} | N2Code
     base(href=".")
   body 
-    header
-      img(src="{{ bannerLink }}", alt="banner")
     article
+      header(style="background-image: url({{ bannerLink }})")
       section.
         {{ content }}
     footer.
