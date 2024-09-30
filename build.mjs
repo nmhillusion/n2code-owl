@@ -6,7 +6,7 @@ const dirname = process.cwd();
 
 const params = parser.cliParamsParser(process.argv);
 
-const watchMode = params.watch ? true : false;
+const watchMode = params.get("watch") ? true : false;
 
 console.log({
   params,

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node build.mjs --watch",
     "build": "node build.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node server.mjs"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,8 @@
     "@nmhillusion/n2mix": "^2023.129.4",
     "@nmhillusion/n2ngin-bull-engine": "^2024.3.3",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "express": "^4.21.0"
   }
 }
