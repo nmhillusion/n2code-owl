@@ -1,8 +1,6 @@
 import { BullEngine } from "@nmhillusion/n2ngin-bull-engine";
 import { parser } from "@nmhillusion/n2mix";
 import * as path from "path";
-import * as fs from "fs";
-import { Indexity } from "@nmhillusion/n2ngin-indexity";
 
 const dirname = process.cwd();
 
@@ -60,15 +58,3 @@ new BullEngine()
   })
   .setVariableFilePathToInject(path.join(dirname, envPath))
   .render();
-
-const indexity_ = new Indexity().config({
-  relativeTo: "dist",
-  srcDir: path.join(dirname, "dist"),
-  baseHref: ".",
-});
-
-const indexityBuilder_ = await indexity_.build();
-
-const siteMapContent = indexityBuilder_.operator.html.basicUI();
-
-fs.writeFileSync("dist/index.html", siteMapContent);

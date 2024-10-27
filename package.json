@@ -4,8 +4,8 @@
   "description": "Learn more about code and programming",
   "main": "index.js",
   "scripts": {
-    "start": "node build.mjs --watch",
-    "build": "node build.mjs --env-path=env.prod.json",
+    "start": "node buildPage.mjs --watch && node buildSiteMap.mjs",
+    "build": "node buildPage.mjs --env-path=env.prod.json && node buildSiteMap.mjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node server.mjs"
   },
