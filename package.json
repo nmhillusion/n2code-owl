@@ -18,7 +18,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "@nmhillusion/n2ngin-indexity": "^2024.10.2",
+    "@nmhillusion/n2ngin-indexity": "^2024.10.3",
     "express": "^4.21.0"
   }
 }
