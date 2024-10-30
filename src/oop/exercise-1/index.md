@@ -71,6 +71,10 @@ class PhepNhan extends PhepTinh {
 class PhepChia extends PhepTinh {
     @Override
     public Object tinh(int x, int y) {
+        if (0 == y) {
+            // Nên sử dụng `throw` để thoát phương thức thay vì chỉ in ra 1 message lên màn hình
+            throw new ArithmeticException("Không thể chia cho 0");
+        }
         return x / y;
     }
 }
@@ -143,6 +147,10 @@ class PhepNhan implements PhepTinh {
 class PhepChia implements PhepTinh {
     @Override
     public Object tinh(int x, int y) {
+        if (0 == y) {
+            // Nên sử dụng `throw` để thoát phương thức thay vì chỉ in ra 1 message lên màn hình
+            throw new ArithmeticException("Không thể chia cho 0");
+        }
         return x / y;
     }
 }
