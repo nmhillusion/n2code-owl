@@ -43,4 +43,4 @@ Cấu trúc kế thừa cơ bản sẽ như sau:
 
 Trong class chính `MyApp`, khi khởi tạo và thêm các outfit cho từng person, ta có thể linh động điều chỉnh outfit với số lượng và loại outfit khác nhau để quan sát sự thay đổi tương ứng nhé
 
-Source-code tham khảo: [https://github.com/nmhillusion/n2code-owl/tree/main/src/oop/exercise-2/exercise2.zip](https://github.com/nmhillusion/n2code-owl/tree/main/src/oop/exercise-2/exercise2.zip)
+Source-code tham khảo: [https://github.com/nmhillusion/n2code-owl/tree/main/src/oop/exercise-2/source-code](https://github.com/nmhillusion/n2code-owl/tree/main/src/oop/exercise-2/source-code)
