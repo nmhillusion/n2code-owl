@@ -123,6 +123,9 @@ public class Child extends Parent {
 
 # Vấn đề của sử dụng các field và method từ các instance
 
+`Bạn có biết?`: Instance là ý chỉ việc tạo ra một đối tường cho 1 class cụ thể. Ví dụ tạo ra biến `var1` cho class `Component` như sau: `Component var1 = new Component();`. Thì khi này `var1` là 1 instance của class `Component`.
+
+
 ```java
 
 package comp;
@@ -166,7 +169,7 @@ public class MyApp {
 
   public static void main(String[] args) {
 
-    Component comp1 = new Component();
+    Component comp1 = new Component(); // Create an instance of Component
 
     comp1.fieldPrivate = "test private"; // Error
     comp1.fieldDefault = "test default"; // Success
@@ -187,7 +190,7 @@ public class MyApp {
 
   public static void main(String[] args) {
 
-    Component comp1 = new Component();
+    Component comp1 = new Component(); // Create an instance of Component
 
     comp1.fieldPrivate = "test private"; // Error
     comp1.fieldDefault = "test default"; // Error
