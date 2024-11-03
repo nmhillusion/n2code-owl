@@ -201,7 +201,9 @@ public class MyApp {
 
 ```
 
-Nếu ta có 1 class ChildComponent kế thừa từ lớp Component thì quy định về mức truy cập cũng sẽ giống vậy, chỉ là sẽ thêm 1 tầng kế thừa của lớp cha với lớp con.
+Nếu ta có 1 class `ChildComponent` kế thừa từ lớp `Component` thì quy định về mức truy cập cũng sẽ giống vậy, chỉ là sẽ thêm 1 tầng kế thừa của lớp cha với lớp con.
+
+**Mức truy cập: Component -> ChildComponent**
 
 - `private` -> `private` : không được kế thừa
 - `default` -> `default` : truy cập bất kỳ ở cùng package
@@ -233,3 +235,9 @@ class Book {
 }
 
 ```
+
+## Các vấn đề liên quan:
+
+1. Vậy về mức truy cập ở mức class thì sao? Khi khai báo class thì ta có mấy lựa chọn? Tác dụng của nó sẽ như thế nào?
+
+2. Sự ảnh hưởng của việc thay đổi giá trị của các field trong Java giữa lớp con và lớp cha như thế nào?
