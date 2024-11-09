@@ -238,6 +238,6 @@ class Book {
 
 ## Các vấn đề liên quan:
 
-1. Vậy về mức truy cập ở mức class thì sao? Khi khai báo class thì ta có mấy lựa chọn? Tác dụng của nó sẽ như thế nào?
+1. [Vậy về mức truy cập ở mức class thì sao? Khi khai báo class thì ta có mấy lựa chọn? Tác dụng của nó sẽ như thế nào?](../post-2--problems-with-declaring-classes-and-using-it/)
 
 2. Sự ảnh hưởng của việc thay đổi giá trị của các field trong Java giữa lớp con và lớp cha như thế nào?
