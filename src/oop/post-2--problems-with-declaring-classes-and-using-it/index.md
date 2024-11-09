@@ -444,10 +444,12 @@ public class MyApp {
 
     A.ANonStatic aNonStatic2 = new A().new ANonStatic();
     aNonStatic2.increase();
+    aNonStatic2.increase();
+    aNonStatic2.increase();
     aNonStatic2.increase(); 
 
-    System.out.println(aNonStatic1.count); // Expected: 5
-    System.out.println(aNonStatic2.count); // Expected: 5
+    System.out.println(aNonStatic1.count); // Expected: 7
+    System.out.println(aNonStatic2.count); // Expected: 7
   }
 }
 ```
