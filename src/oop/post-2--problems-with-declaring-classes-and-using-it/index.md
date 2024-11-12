@@ -55,7 +55,7 @@ Person p = new Person("John", 25, "123 Main St");
 
 `access modifier`: `public`, `private` hoaặc `default`.
 
-`final`: Khi có final trong định nghĩa class thì có nghĩa class này không chấp nhận 1 class khác kế thừa nó.
+`final`: Khi có final trong định nghĩa class thì có nghĩa class này không chấp nhận 1 class khác kế thừa nó. Tương tự nếu 1 interface mà ta khai báo với `final` thì nó cũng không thể được kế thừa (`extends`) từ interface khác hoặc cài đặt (`implements`) từ class khác được.
 
 `Class name`: Tên class, theo quy chuẩn đặt tên của java.
 
@@ -73,7 +73,7 @@ File `A.java`:
 package com.example1;
 
 public class A {
-  
+
 }
 
 ```
@@ -93,10 +93,19 @@ public class MyApp {
 
 ```
 
-
 #### `private`
 
-Chỉ có thể khai báo và sử dụng class này trong nội bộ của class khai báo hiện tại. Có nghĩa bạn chỉ có thể khai báo và sử dụng private class như là class nội bộ của một class khác.
+Nếu bạn khai báo 1 class bình thường với access modifier là `private` là không được phép.
+
+File `A.java`
+
+```java
+
+private class A {} // compiler sẽ báo lỗi, không cho phép khai báo class với mức truy cập là `private` ở đây
+
+```
+
+Chỉ có thể khai báo và sử dụng class `private` trong nội bộ của class khai báo khác. Có nghĩa bạn chỉ có thể khai báo và sử dụng private class như là class nội bộ của một class khác.
 
 Ví dụ:
 
@@ -118,7 +127,7 @@ class C {
 
 #### `default`
 
-Cũng giống như mức truy cập `default` của field / methods. Khi 1 class được khai báo dưới dạng `default` thì có nghĩa nó chỉ có thể truy cập từ trong cùng package.
+Cũng giống như mức truy cập `default` của fields / methods. Khi 1 class được khai báo dưới dạng `default` thì có nghĩa nó chỉ có thể truy cập từ trong cùng package.
 
 Ví dụ:
 
@@ -237,6 +246,7 @@ public class MyApp2 {
 Ví dụ:
 
 File `A.java`:
+
 ```java
 
 package com.example1;
@@ -257,7 +267,14 @@ import com.example1.A;
 
 public class MyApp {
   public void run(){
-    A.AProtected aProtected = new A().new AProtected(); // Error - Dù có thể truy cập tới inner class `AProtected` trong class `A`. Nhưng default inner class `AProtected` trong class `A` mặc định thì cũng là protected.
+    A.AProtected aProtected = new A().new AProtected();
+    /*
+    Error -
+    Dù có thể truy cập tới inner class `AProtected` trong class `A`.
+
+    Nhưng default constructor của inner class `AProtected` trong class `A` mặc định thì cũng là protected.
+    Nên khi khác package thì bạn cũng không thể khởi tạo.
+    */
   }
 }
 
@@ -274,9 +291,9 @@ package com.example1;
 public class A {
   protected class AProtected {
     public AProtected() {
-      
+
     }
-  }  
+  }
 }
 
 ```
@@ -296,7 +313,7 @@ public class MyApp {
 }
 ```
 
-<u>**Hoặc ở một góc nhìn khác,**</u> bạn cũng có thể truy cập được protected constructor trong inner class `AProtected` nếu bạn ở cùng package với class `A`:
+<u>**Hoặc ở một góc nhìn khác,**</u> bạn cũng có thể truy cập được protected constructor trong inner class `AProtected` nếu bạn **ở cùng package** với class `A`:
 
 File `A.java`:
 
@@ -307,9 +324,9 @@ package com.example1;
 public class A {
   protected class AProtected {
     protected AProtected() { // Có thể khai báo tường minh constructor này hay không đều được
-      
+
     }
-  }  
+  }
 }
 ```
 
@@ -328,7 +345,6 @@ public class MyApp {
 }
 
 ```
-
 
 ### Inner class với có và không có keyword `static`
 
@@ -351,7 +367,7 @@ public class A {
   }
 
   public class ANonStatic {
-  } 
+  }
 }
 
 ```
@@ -366,11 +382,17 @@ import com.example1.A;
 
 public class MyApp {
   public void run(){
-    A.AStatic aStatic = A.AStatic(); // Vì khi này inner class AStatic là thuộc về A nên ta có thể khai báo trực tiếp A.AStatic
-    
+    A.AStatic aStatic = A.AStatic(); // Vì khi này inner class AStatic là thuộc về class A nên ta có thể khai báo trực tiếp A.AStatic
+
     ////////
-    
-    A.ANonStatic aNonStatic = new A().new ANonStatic(); // Vì khi này inner class ANonStatic là thuộc về instance nên ta không thể khai báo trực tiếp A.ANonStatic. Mà phải thông qua 1 instace của class A
+
+    A.ANonStatic aNonStatic = new A().new ANonStatic();
+    /*
+      Vì khi này inner class ANonStatic không thuộc về class A
+      mà thuộc về instance của class A
+      nên ta không thể khai báo trực tiếp A.ANonStatic.
+      Mà phải thông qua 1 instance của class A
+    */
 
     // Tương đương với
 
@@ -384,7 +406,6 @@ public class MyApp {
 
 Tới đây, ta sẽ có 1 câu hỏi, vậy biến `static` trong inner class sẽ có ảnh hưởng thế nào trong 2 trường hợp inner class có static và không có static này?
 
-
 File `A.java`:
 
 ```java
@@ -395,6 +416,7 @@ public class A {
 
   public static class AStatic {
     static int count = 0;
+    static Person a1 = new Person();
 
     public void increase() {
       count++;
@@ -403,6 +425,7 @@ public class A {
 
   public class ANonStatic {
     static int count = 0;
+    static Person a1 = new Person();
 
     public void increase() {
       count++;
@@ -446,13 +469,17 @@ public class MyApp {
     aNonStatic2.increase();
     aNonStatic2.increase();
     aNonStatic2.increase();
-    aNonStatic2.increase(); 
+    aNonStatic2.increase();
 
     System.out.println(aNonStatic1.count); // Expected: 7
     System.out.println(aNonStatic2.count); // Expected: 7
+
+    System.out.println(aNonStatic1.a1); // output: Person@7229724f
+    System.out.println(aNonStatic2.a1); // output: Person@7229724f
   }
 }
 ```
 
-Ở đây dù biến `static` `count` trong dạng inner class nào thì bản chất cũng là thuộc về tham chiếu của `A.AStatic.count` hay `A.ANonStatic.count`. Nên khi ta gọi hàm increase thì về bản chất là cùng `increase` giá trị của ***cùng 1 tham chiếu*** và giá chị `static count` chung đó sẽ thay đổi giống nhau của cả 2 trường hợp.
+Ở đây dù biến `static` `count` trong dạng inner class nào thì bản chất cũng là thuộc về tham chiếu của `A.AStatic.count` hay `A.ANonStatic.count`. Nên khi ta gọi hàm `increase()` thì về bản chất là cùng `increase` giá trị của **_cùng 1 tham chiếu_** và giá chị `static count` chung đó sẽ thay đổi giống nhau của cả 2 trường hợp, khá là bất ngờ và thú vị.
 
+Cụ thể như 2 dòng output cuối bạn sẽ thấy: biến `a1` trong cả 2 instance `aNonStatic1` và `aNonStatic2` đều đang trỏ về cùng 1 tham chiếu là `Person@7229724f`
