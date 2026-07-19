@@ -1,0 +1,61 @@
+html,
+body {
+  font-family: "Jura", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.3em;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
+article {
+  background-color: #ddd;
+  padding: 1em 0;
+
+  header {
+    width: 100%;
+    max-width: 50em;
+    margin: auto;
+    height: 25em;
+    padding: 1em;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+    background-color: #eee;
+    mask: linear-gradient(#000 0 0);
+    -webkit-mask: linear-gradient(#000 0 0);
+  }
+
+  section {
+    width: 100%;
+    max-width: 50em;
+    margin: auto;
+    padding: 1em;
+
+    background-color: white;
+    box-shadow: 2px 2px 8px #ddd;
+    border-radius: 0.5em;
+  }
+}
+
+code:not([class*="language-"]) {
+  font-family: monospace;
+  background-color: #d4dce9;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+}
+
+footer {
+  font-family: monospace;
+  text-align: center;
+}

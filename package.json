@@ -4,7 +4,7 @@
   "description": "Learn more about code and programming",
   "main": "index.js",
   "scripts": {
-    "start": "node buildPage.mjs --watch && node buildSiteMap.mjs",
+    "start": "node buildPage.mjs && node buildSiteMap.mjs",
     "build": "node buildPage.mjs --env-path=env.prod.json && node buildSiteMap.mjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node server.mjs"
@@ -14,11 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "@nmhillusion/n2mix": "^2023.129.4",
-    "@nmhillusion/n2ngin-bull-engine": "^2024.3.3",
+    "@nmhillusion/n2ngin-bull-engine": "^2024.3.4",
     "path": "^0.12.7"
   },
   "devDependencies": {
     "@nmhillusion/n2ngin-indexity": "^2024.10.3",
-    "express": "^4.21.0"
+    "express": "^5.2.1"
   }
 }
